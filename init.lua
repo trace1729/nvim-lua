@@ -18,6 +18,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 local plugins = {
-
+	-- 安装注意插件
+	{
+		"catppuccin/nvim",
+		name="catppuccin",
+		priority=1000
+	}
 }
 require("lazy").setup(plugins)
+require("catppuccin").setup()
+
+vim.cmd.colorsheme "catppuccin"
