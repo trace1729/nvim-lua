@@ -29,10 +29,16 @@ local plugins = {
 		"nvim-telescope/telescope.nvim",
 		tag="0.1.5",
 		dependencies={ "nvim-lua/plenary.nvim" }
+	},
+	-- 添加 treesitter 
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build=":TSUpdate"
 	}
 }
 require("lazy").setup(plugins)
 require("catppuccin").setup()
+-- 配置 telescope
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<C-p>", builtin.find_files, {})
 require("telescope").setup({
@@ -42,5 +48,13 @@ require("telescope").setup({
 })
 -- live grep (C-f)
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+
+-- 配置 treesitter
+local configs = require("nvim-treesitter.configs")
+configs.setup({
+	ensure_installed={"lua"},
+	highlight={enable=true},
+	indent={enable=true}
+})
 
 vim.cmd.colorscheme "catppuccin"
