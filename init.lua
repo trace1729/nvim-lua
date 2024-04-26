@@ -145,7 +145,7 @@ local plugins = {
 
         -- LSP mappings
         map("n", "gD", vim.lsp.buf.definition)
-        map("n", "K", vim.lsp.buf.hover)
+ --       map("n", "K", vim.lsp.buf.hover)
         map("n", "gi", vim.lsp.buf.implementation)
         map("n", "gr", vim.lsp.buf.references)
         map("n", "gds", vim.lsp.buf.document_symbol)
@@ -242,6 +242,7 @@ require("telescope").setup({
 })
 -- live grep (C-f)
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+vim.keymap.set("n", "tt", ":Neotree<CR>", {})
 
 -- 配置 treesitter
 local configs = require("nvim-treesitter.configs")

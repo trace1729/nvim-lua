@@ -17,6 +17,7 @@ local nmappings = {
 	{ from = "z",             to = "i",                                                                   mode = mode_nv },
 	{ from = "I",             to = "5k",                                                                  mode = mode_nv },
 	{ from = "K",             to = "5j",                                                                  mode = mode_nv },
+	{ from = "Z",             to = "I",                                                                  mode = mode_nv },
 	{ from = "N",             to = "0",                                                                   mode = mode_nv },
 	{ from = "E",             to = "$",                                                                   mode = mode_nv },
 	{ from = "gu",            to = "gk",                                                                  mode = mode_nv },
@@ -45,10 +46,10 @@ local nmappings = {
 	{ from = "sd",            to = ":set splitbelow<CR>:split<CR>", },
 	{ from = "sl",            to = ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>", },
 	{ from = "sr",            to = ":set splitright<CR>:vsplit<CR>", },
-	{ from = "<up>",          to = ":res +5<CR>", },
-	{ from = "<down>",        to = ":res -5<CR>", },
-	{ from = "<left>",        to = ":vertical resize-5<CR>", },
-	{ from = "<right>",       to = ":vertical resize+5<CR>", },
+	-- { from = "<up>",          to = ":res +5<CR>", },
+	-- { from = "<down>",        to = ":res -5<CR>", },
+	-- { from = "<left>",        to = ":vertical resize-5<CR>", },
+	-- { from = "<right>",       to = ":vertical resize+5<CR>", },
 	-- { from = "sh",            to = "se", },
 	-- { from = "sh",            to = "<C-w>t<C-w>K", },
 	-- { from = "sv",            to = "<C-w>t<C-w>H", },
@@ -93,10 +94,4 @@ local function run_vim_shortcut(shortcut)
 end
 
 -- close win below
-vim.keymap.set("n", "<leader>q", function()
-	vim.cmd("TroubleClose")
-	local wins = vim.api.nvim_tabpage_list_wins(0)
-	if #wins > 1 then
-		run_vim_shortcut([[<C-w>j:q<CR>]])
-	end
-end, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>q", ":q<CR>")
