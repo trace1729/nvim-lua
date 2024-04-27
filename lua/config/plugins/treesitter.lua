@@ -27,6 +27,7 @@ return {
 					"dockerfile",
 					"yaml",
 					"python",
+					"verilog",
 				},
 				highlight = {
 					enable = true,
