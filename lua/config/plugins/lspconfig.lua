@@ -56,7 +56,7 @@ M.config = {
 			lsp.ensure_installed({
 				'tsserver',
 				'eslint',
-				'gopls',
+				--				'gopls',
 				'jsonls',
 				'html',
 				'clangd',
@@ -65,6 +65,7 @@ M.config = {
 				'terraformls',
 				'texlab',
 				'pyright',
+				'verible'
 			})
 
 			-- F.configureInlayHints()
@@ -192,8 +193,6 @@ M.config = {
 				javascript = true,
 				typescript = true,
 				typescriptreact = true,
-				c = true,
-				cpp = true,
 				objc = true,
 				objcpp = true,
 				dockerfile = true,
