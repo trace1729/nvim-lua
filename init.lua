@@ -242,7 +242,7 @@ require("telescope").setup({
 })
 -- live grep (C-f)
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-vim.keymap.set("n", "tt", ":Neotree<CR>", {})
+vim.keymap.set("n", "tt", ":Neotree toggle<CR>", {})
 
 -- 配置 treesitter
 local configs = require("nvim-treesitter.configs")

@@ -60,8 +60,8 @@ local nmappings = {
 	{ from = "tu",            to = ":tabe<CR>", },
 	{ from = "<leader>n",            to = ":tabe<CR>", },
 	{ from = "tU",            to = ":tab split<CR>", },
-	{ from = "tn",            to = ":-tabnext<CR>", },
-	{ from = "ti",            to = ":+tabnext<CR>", },
+	{ from = "th",            to = ":-tabnext<CR>", },
+	{ from = "tl",            to = ":+tabnext<CR>", },
 	{ from = "tmn",           to = ":-tabmove<CR>", },
 	{ from = "tmi",           to = ":+tabmove<CR>", },
 
