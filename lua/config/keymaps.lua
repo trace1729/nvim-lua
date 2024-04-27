@@ -83,6 +83,7 @@ local nmappings = {
 
 vim.keymap.set("n", "q", "<nop>", { noremap = true })
 vim.keymap.set("n", ",q", "q", { noremap = true })
+vim.keymap.set("t","<ESC>","<c-\\><c-n>", {noremap=true,silent=true})
 
 for _, mapping in ipairs(nmappings) do
 	vim.keymap.set(mapping.mode or "n", mapping.from, mapping.to, { noremap = true })
