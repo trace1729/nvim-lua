@@ -40,6 +40,10 @@ local nmappings = {
 	{ from = "<leader>k",     to = "<C-w>j", },
 	{ from = "<leader>j",     to = "<C-w>h", },
 	{ from = "<leader>l",     to = "<C-w>l", },
+	{ from = "<leader><up>",     to = "<C-w>k", },
+	{ from = "<leader><down>",     to = "<C-w>j", },
+	{ from = "<leader><left>",     to = "<C-w>h", },
+	{ from = "<leader><right>",     to = "<C-w>l", },
 	{ from = "qf",            to = "<C-w>o", },
 	{ from = "s",             to = "<nop>", },
 	{ from = "su",            to = ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", },
@@ -79,6 +83,7 @@ local nmappings = {
 
 	-- Joshuto
 	{ from = "R",             to = ":Joshuto<CR>" },
+	{ from = "T",             to = ":terminal<CR>" },
 }
 
 vim.keymap.set("n", "q", "<nop>", { noremap = true })
