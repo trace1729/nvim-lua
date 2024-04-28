@@ -6,9 +6,9 @@ local mode_i = { "i" }
 local nmappings = {
 	{ from = "S",               to = ":w<CR>" },
 	{ from = "Q",               to = ":q<CR>" },
-	{ from = ";",               to = ":",                                                                   mode = mode_nv },
+	-- { from = ";",               to = ":",                                                                   mode = mode_nv },
 	{ from = "Y",               to = "\"+y",                                                                mode = mode_v },
-	{ from = "`",               to = "~",                                                                   mode = mode_nv },
+	-- { from = "`",               to = "~",                                                                   mode = mode_nv },
 
 	-- Movement
 	{ from = "i",               to = "k",                                                                   mode = mode_nv },
