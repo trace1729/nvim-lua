@@ -88,6 +88,8 @@ local nmappings = {
 
 vim.keymap.set("n", "q", "<nop>", { noremap = true })
 vim.keymap.set("n", ",q", "q", { noremap = true })
+-- substitution
+vim.keymap.set("n", "\\s", ":%s+++g", { noremap = true })
 
 for _, mapping in ipairs(nmappings) do
 	vim.keymap.set(mapping.mode or "n", mapping.from, mapping.to, { noremap = true })
