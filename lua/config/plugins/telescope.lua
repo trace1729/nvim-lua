@@ -42,7 +42,7 @@ M.config = {
 			-- vim.keymap.set('n', 'gd', builtin.lsp_definitions, m)
 			-- vim.keymap.set('n', '<c-t>', builtin.lsp_document_symbols, {})
 			vim.keymap.set('n', 'gi', builtin.git_status, m)
-			vim.keymap.set("n", ":", builtin.commands, m)
+			vim.keymap.set("n", "<C-l>", builtin.commands, m)
 
 			local trouble = require("trouble.providers.telescope")
 
@@ -69,8 +69,8 @@ M.config = {
 					mappings = {
 						i = {
 							["<C-h>"] = "which_key",
-							["<C-u>"] = "move_selection_previous",
-							["<C-e>"] = "move_selection_next",
+							["<C-b>"] = "move_selection_previous",
+							["<C-f>"] = "move_selection_next",
 							["<C-l>"] = "preview_scrolling_up",
 							["<C-y>"] = "preview_scrolling_down",
 							["<esc>"] = "close",
