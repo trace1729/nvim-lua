@@ -1,4 +1,5 @@
-require("config.keymaps")
+-- 可以直接修改这个键位映射文件
+-- require("config.keymaps")
 require("config.preference")
 -- 添加包管理器 lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
