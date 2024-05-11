@@ -186,11 +186,12 @@ M.configfunc = function()
 			{ name = "path" },
 			{ name = "nvim_lua" },
 			{ name = "calc" },
+			{ name = "buffer" },
 			-- { name = "luasnip" },
 			-- { name = 'tmux',    option = { all_panes = true, } },  -- this is kinda slow
 		}),
 		mapping = cmp.mapping.preset.insert({
-			['<C-o>'] = cmp.mapping.complete(),
+			['<C-Space>'] = cmp.mapping.complete(),
 			["<c-e>"] = cmp.mapping(
 				function()
 					cmp_ultisnips_mappings.compose { "expand", "jump_forwards" } (function() end)
@@ -211,15 +212,16 @@ M.configfunc = function()
 			}),
 			['<c-y>'] = cmp.mapping({ i = function(fallback) fallback() end }),
 			['<c-u>'] = cmp.mapping({ i = function(fallback) fallback() end }),
-			['<CR>'] = cmp.mapping({
-				i = function(fallback)
-					if cmp.visible() and cmp.get_active_entry() then
-						cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-					else
-						fallback()
-					end
-				end
-			}),
+			['<CR>'] = cmp.mapping.confirm({ select = false }),
+			-- ['<CR>'] = cmp.mapping({
+			-- 	i = function(fallback)
+			-- 		if cmp.visible() and cmp.get_active_entry() then
+			-- 			cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+			-- 		else
+			-- 			fallback()
+			-- 		end
+			-- 	end
+			-- }),
 			["<Tab>"] = cmp.mapping({
 				i = function(fallback)
 					if cmp.visible() then
@@ -244,6 +246,24 @@ M.configfunc = function()
 				end,
 			}),
 		}),
+	})
+	-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+	cmp.setup.cmdline({ '/', '?' }, {
+		mapping = cmp.mapping.preset.cmdline(),
+		sources = {
+			{ name = 'buffer' }
+		}
+	})
+
+	-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+	cmp.setup.cmdline(':', {
+		mapping = cmp.mapping.preset.cmdline(),
+		sources = cmp.config.sources({
+			{ name = 'path' }
+		}, {
+			{ name = 'cmdline' }
+		}),
+		matching = { disallow_symbol_nonprefix_matching = false }
 	})
 end
 

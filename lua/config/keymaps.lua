@@ -18,7 +18,7 @@ local nmappings = {
 	{ from = "I",               to = "5k",                                                                  mode = mode_nv },
 	{ from = "K",               to = "5j",                                                                  mode = mode_nv },
 	{ from = "Z",               to = "I",                                                                   mode = mode_nv },
-	{ from = "N",               to = "0",                                                                   mode = mode_nv },
+	--	{ from = "N",               to = "0",                                                                   mode = mode_nv },
 	{ from = "E",               to = "$",                                                                   mode = mode_nv },
 	{ from = "gu",              to = "gk",                                                                  mode = mode_nv },
 	{ from = "ge",              to = "gj",                                                                  mode = mode_nv },
@@ -90,6 +90,10 @@ vim.keymap.set("n", "q", "<nop>", { noremap = true })
 vim.keymap.set("n", ",q", "q", { noremap = true })
 -- substitution
 vim.keymap.set("n", "\\s", ":%s+++g", { noremap = true })
+vim.keymap.set("n", "<leader>sp", ":setspell!<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>/", ":set splitbelow<CR>:split<CR>:res -5<CR>:term<CR>", { noremap = true })
+vim.keymap.set("n", "\\p", ":echo expand('%:p')<CR>", { noremap = true })
+
 
 for _, mapping in ipairs(nmappings) do
 	vim.keymap.set(mapping.mode or "n", mapping.from, mapping.to, { noremap = true })
