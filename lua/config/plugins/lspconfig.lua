@@ -38,7 +38,7 @@ M.config = {
 				tag = "legacy"
 			},
 			"folke/neodev.nvim",
-			"ray-x/lsp_signature.nvim",
+			-- "ray-x/lsp_signature.nvim",
 			"ldelossa/nvim-dap-projects",
 			{
 				"lvimuser/lsp-inlayhints.nvim",
@@ -75,7 +75,7 @@ M.config = {
 				client.server_capabilities.semanticTokensProvider = nil
 				require("config.plugins.autocomplete").configfunc()
 				-- if vim.bo[bufnr].filetype ~= "dart" then
-				require("lsp_signature").on_attach(F.signature_config, bufnr)
+				-- require("lsp_signature").on_attach(F.signature_config, bufnr)
 				-- end
 				-- require("lsp-inlayhints").on_attach(client, bufnr)
 				-- vim.api.nvim_create_augroup("lsp_augroup", { clear = true })
