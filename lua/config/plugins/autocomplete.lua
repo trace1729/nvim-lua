@@ -179,12 +179,16 @@ M.configfunc = function()
 				return kind
 			end,
 		},
+		view = {
+			docs = {
+				auto_open = false
+			}
+		},
 		sources = cmp.config.sources({
-			{ name = "nvim_lsp" },
-			{ name = "buffer" },
+			{ name = "nvim_lsp", max_item_count = 5 },
+			{ name = "nvim_lua", max_item_count = 5 },
 		}, {
 			{ name = "path" },
-			{ name = "nvim_lua" },
 			{ name = "calc" },
 			{ name = "buffer" },
 			-- { name = "luasnip" },
@@ -246,24 +250,6 @@ M.configfunc = function()
 				end,
 			}),
 		}),
-	})
-	-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-	cmp.setup.cmdline({ '/', '?' }, {
-		mapping = cmp.mapping.preset.cmdline(),
-		sources = {
-			{ name = 'buffer' }
-		}
-	})
-
-	-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-	cmp.setup.cmdline(':', {
-		mapping = cmp.mapping.preset.cmdline(),
-		sources = cmp.config.sources({
-			{ name = 'path' }
-		}, {
-			{ name = 'cmdline' }
-		}),
-		matching = { disallow_symbol_nonprefix_matching = false }
 	})
 end
 
