@@ -16,6 +16,7 @@ let g:VM_maps['Skip Region']        = '<c-n>'
 let g:VM_maps["Undo"]               = 'l'
 let g:VM_maps["Redo"]               = '<C-r>'
 noremap <leader>sa <Plug>(VM-Select-All)
+noremap <leader>ga <Plug>(VM-Align)
 ]])
 	end
 }

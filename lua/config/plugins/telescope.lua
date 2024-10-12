@@ -32,7 +32,7 @@ M.config = {
 			vim.keymap.set('n', '<c-w>', builtin.buffers, m)
 			vim.keymap.set('n', '<c-h>', builtin.oldfiles, m)
 			vim.keymap.set('n', '<c-_>', builtin.current_buffer_fuzzy_find, m)
-			vim.keymap.set('n', 'z=', builtin.spell_suggest, m)
+			vim.keymap.set('n', '<leader>z=', builtin.spell_suggest, m)
 
 			vim.keymap.set('n', '<leader>d', function()
 				builtin.diagnostics({
@@ -41,7 +41,7 @@ M.config = {
 			end, m)
 			-- vim.keymap.set('n', 'gd', builtin.lsp_definitions, m)
 			-- vim.keymap.set('n', '<c-t>', builtin.lsp_document_symbols, {})
-			vim.keymap.set('n', 'gi', builtin.git_status, m)
+			vim.keymap.set('n', '<leader>gi', builtin.git_status, m)
 			vim.keymap.set("n", "<C-l>", builtin.commands, m)
 
 			local trouble = require("trouble.providers.telescope")
