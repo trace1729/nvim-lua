@@ -67,6 +67,7 @@ require("lazy").setup({
 	require("config.plugins.metals"),
 	require("config.plugins.tasks"),
 	require("config.plugins.typst"),
+	require("config.plugins.neotree"),
 	{ "dstein64/vim-startuptime" },
 }, {
 })
