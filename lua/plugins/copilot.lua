@@ -119,14 +119,27 @@ return {
 			vim.api.nvim_set_keymap('i', '<c-p>', '<Plug>(copilot-suggest)', { noremap = true })
 			vim.api.nvim_set_keymap('i', '<c-n>', '<Plug>(copilot-next)', { noremap = true, silent = true })
 			vim.api.nvim_set_keymap('i', '<c-l>', '<Plug>(copilot-previous)', { noremap = true, silent = true })
-			vim.cmd('imap <silent><script><expr> <C-C> copilot#Accept("")')
+			vim.cmd('imap <silent><script><expr> <C-X> copilot#Accept("")')
 			vim.cmd([[
 			let g:copilot_filetypes = {
 	       \ 'TelescopePrompt': v:false,
 	     \ }
 			]])
 		end
-	}
+	},
+	{
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", branch = "master" },
+    },
+    build = "make tiktoken",
+    opts = {
+      -- See Configuration section for options
+    },
+	config = function()
+		vim.api.nvim_set_keymap('n', '<leader>cc', ';CopilotChatToggle<CR><CR>', { silent = true })
+	end
+  },
 	-- {
 	-- 	"Exafunction/codeium.vim",
 	-- 	config = function()
