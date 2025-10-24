@@ -195,37 +195,37 @@ M.config = {
 			})
 			vim.keymap.set('n', '<c-q>', require("commander").show, m)
 			commander.add({
-				{
-					desc = "Run Simulator",
-					cmd = "<CMD>Telescope simulators run<CR>",
-				},
+				-- {
+					-- desc = "Run Simulator",
+					-- cmd = "<CMD>Telescope simulators run<CR>",
+				-- },
 				{
 					desc = "Git diff",
 					cmd = "<CMD>Telescope git_status<CR>",
 				},
-				{
-					desc = "Restart Dart LSP",
-					cmd = function()
-						local bufnr = vim.api.nvim_get_current_buf()
-						local clients = vim.lsp.get_active_clients({ name = 'dartls' })
-						for _, client in ipairs(clients) do
-							if vim.lsp.buf_is_attached(bufnr, client.id) then
-								vim.lsp.buf_detach_client(bufnr, client.id)
-							end
-						end
+				-- {
+					-- desc = "Restart Dart LSP",
+					-- cmd = function()
+						-- local bufnr = vim.api.nvim_get_current_buf()
+						-- local clients = vim.lsp.get_active_clients({ name = 'dartls' })
+						-- for _, client in ipairs(clients) do
+							-- if vim.lsp.buf_is_attached(bufnr, client.id) then
+								-- vim.lsp.buf_detach_client(bufnr, client.id)
+							-- end
+						-- end
 
-						vim.lsp.start({
-							name = 'dartls',
-							cmd = { 'dart', 'language-server', '--protocol=lsp' },
-							root_dir = vim.fn.getcwd()
-						}, {
-							bufnr = bufnr,
-							reuse_client = function()
-								return false
-							end,
-						})
-					end,
-				},
+						-- vim.lsp.start({
+							-- name = 'dartls',
+							-- cmd = { 'dart', 'language-server', '--protocol=lsp' },
+							-- root_dir = vim.fn.getcwd()
+						-- }, {
+							-- bufnr = bufnr,
+							-- reuse_client = function()
+								-- return false
+							-- end,
+						-- })
+					-- end,
+				-- },
 			})
 		end
 	}
