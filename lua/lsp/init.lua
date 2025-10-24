@@ -86,7 +86,7 @@ require('mason-lspconfig').setup({
 		"cssls",
 		'ts_ls',
 		'eslint',
-		'gopls',
+		-- 'gopls',
 		'jsonls',
 		'html',
 		'clangd',
