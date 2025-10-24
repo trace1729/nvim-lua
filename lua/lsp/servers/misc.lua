@@ -115,6 +115,16 @@ function M.setup()
 		root_markers = { '.clangd', '.clang-tidy', '.clang-format', 'compile_commands.json', 'compile_flags.txt', 'configure.ac', '.git' },
 	})
 
+	vim.lsp.config(
+		'metals', {
+			root_markers = {
+				"build.sbt",
+				"build.sc",
+				"build.mill"
+			}
+		}
+	)
+
 	-- Enable the servers
 	vim.lsp.enable('yamlls')
 	vim.lsp.enable('terraformls')
